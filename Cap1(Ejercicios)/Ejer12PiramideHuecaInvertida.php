@@ -14,12 +14,14 @@ hacia abajo.
     <title>Ejercicio 12</title>
   </head>
   <body>
+    <p style =" font-family: courier">
     <?php
       echo "*********<br>";
-      echo "&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
-      echo "&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
-      echo "&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;*<br>";
-      echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
+      echo "&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
+      echo "&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;*<br>";
+      echo "&nbsp;&nbsp;&nbsp;*&nbsp;*<br>";
+      echo "&nbsp;&nbsp;&nbsp;&nbsp;*<br>";   
     ?>
+    </p>
   </body>
 </html>

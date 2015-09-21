@@ -14,12 +14,14 @@ contorno hecho con asteriscos).
     <title>Ejercicio 11</title>
   </head>
   <body>
+    <p style =" font-family: courier">
     <?php
-      echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
-      echo "&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;*<br>";
-      echo "&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
-      echo "&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
+      echo "&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
+      echo "&nbsp;&nbsp;&nbsp;*&nbsp;*<br>";
+      echo "&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;*<br>";
+      echo "&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
       echo "*********";
     ?>
+    </p>
   </body>
 </html>

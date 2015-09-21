@@ -14,6 +14,7 @@ pirámide debe estar formada por 9 asteriscos.
     <title>Ejercicio 10</title>
   </head>
   <body>
+    <p style =" font-family: courier">
     <?php
       echo "&nbsp;&nbsp;&nbsp;&nbsp;*<br>";
       echo "&nbsp;&nbsp;&nbsp;***<br>";
@@ -21,5 +22,6 @@ pirámide debe estar formada por 9 asteriscos.
       echo "&nbsp;*******<br>";
       echo "*********";
     ?>
+  </p>
   </body>
 </html>
