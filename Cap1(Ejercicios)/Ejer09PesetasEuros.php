@@ -17,7 +17,7 @@ almacenada en una variable.
     <form>
     <?php
       $pesetas = 1000;
-      echo $pesetas, " € son ", $pesetas / 166.386 , " pts";
+      echo $pesetas, " pesetas son ", $pesetas / 166.386 , " €";
     ?>
     </form>
   </body>
