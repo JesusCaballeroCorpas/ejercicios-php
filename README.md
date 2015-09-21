@@ -1,6 +1,6 @@
 # Repositorio de ejercicios de PHP
 
-Repositorio de prueba pa aprender a manejar *Git*
+Repositorio de prueba para aprender a manejar *Git*
 
 Utilizaremos programas en **PHP**
 
