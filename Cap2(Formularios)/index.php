@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Capitulo 1 Salida por pantalla y Variables
+Capitulo 2 Formularios
 
 Ejercicio 1
 Realiza un programa que pida dos números y luego muestre el resultado de su multiplicación.
@@ -53,7 +53,7 @@ Realiza un conversor de Kb a Mb.
         <h2>Ejercicio 2</h2>
         <h3>Conversor de €uros a Pesetas</h3>
         <form action="ejer02EuroPeseta.php" method="get">
-          <input type="number" name="euro">
+          <input type="number" min="0" step="0.01" name="euro">
           <input type="submit" value="Convertir a Pesetas">
         </form>
       </div>
@@ -119,7 +119,7 @@ Realiza un conversor de Kb a Mb.
         <h2>Ejercicio 9</h2>
         <h3>Calcular Volumen de un Cono</h3>
         <form action="ejer09VolumenCono.php" method="get">
-          Radio: <input type="number" name="radio">
+          Radio: <input type="number" min="0" name="radio">
           Altura: <input type="number" name="altura">
           <input type="submit" value="Calcular Volumen">
         </form>

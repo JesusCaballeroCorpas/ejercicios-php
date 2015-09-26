@@ -1,0 +1,39 @@
+/* 
+    Created on : 23-sep-2015, 10:13:14
+    @author: Jesús Caballero Corpas
+*/
+body{
+  background-color: yellowgreen;
+}
+#contenedor{
+  margin: 0 auto;
+  display: block;
+}
+div div{
+  float: left;
+  border-radius: 10px;
+  border:black 2px solid;
+  background: content-box;
+  margin: 5px;
+  padding: 5px;
+  width: 48%;
+  min-height: 10rem;
+}
+p{
+  clear: both;
+  overflow: hidden;
+}
+h1,h2{
+  text-align: center;
+}
+#botonCuestionario{
+  margin: 0 auto;
+  display: block;
+}
+table{
+  width: 95%;
+}
+th{
+  text-align: left;
+}
+

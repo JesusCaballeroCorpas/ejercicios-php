@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+Capitulo 3 If y Switch
+
+Ejercicio 12
+Realiza un minicuestionario con 10 preguntas tipo test sobre las asignaturas que se imparten en
+el curso. Cada pregunta acertada sumará un punto. El programa mostrará al final la calificación
+obtenida. Pásale el minicuestionario a tus compañeros y pídeles que lo hagan para ver qué tal andan
+de conocimientos en las diferentes asignaturas del curso.
+
+@author: Jesús Caballero Corpas
+-->
+<html>
+  <head>
+    <title>Ejercicios PHP Capitulo 3. If y Switch</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="contenedor">
+      <h1>Ejercicios PHP Capitulo 3. If y Switch</h1>
+      <h2>Ejercicio 12 Cuestionario</h2>
+      <form method="get" action="ejer12RespCuestionario.php">
+        <div>
+          <table>
+            <tr>
+              <th>
+                1. ¿Que lenguaje de programación estamos usando ahora mismo en la asignatura de 
+                Programación?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="uno" value="a">PHP</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="uno" value="b">ASP</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="uno" value="c">JSP</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                2. ¿Cual de los siguientes es un lenguaje de marcas?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="dos" value="a">XML</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="dos" value="b">C++</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="dos" value="c">Java</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                3. ¿Que nos indica @Override en un metodo en Java?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="tres" value="a">Que estamos creando un nuevo metodo</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="tres" value="b">Que estamos sobreescribiendo un metodo que existia previamente</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="tres" value="c">Ninguna de las anteriores es correcta</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                4. ¿Que sistema gestor de base de datos es de Microsoft?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="cuatro" value="a">Oracle</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="cuatro" value="b">MySQL</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="cuatro" value="c">SQL Server</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                5. ¿Con que sentencia de SQL se puede realizar una consulta?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="cinco" value="a">SELECT</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="cinco" value="b">CREATE</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="cinco" value="c">UPDATE</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                6. ¿Cual sería una síntesis correcta a la hora de crear un ArrayList en Java?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="seis" value="a">
+                ArrayList&lt;Integer&gt; array = new ArrayList&lt;&gt;();</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="seis" value="b">
+                ArrayList&lt;Integer&gt; array = new ArrayList&lt;Integer&gt;();</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="seis" value="c">Ambas opciones son correctas</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                7. ¿En HTML que tipo de dato manda un campo oculto en un formulario?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="siete" value="a">radio</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="siete" value="b">hidden</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="siete" value="c">submit</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                8. ¿En que diagrama de base de datos utilizamos rombos?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="ocho" value="a">D.E.D.</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="ocho" value="b">E.R.</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="ocho" value="c">Diagrama de Clases</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                9. ¿Cual de las siguientes sentencias no es un bucle?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="nueve" value="a">while</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="nueve" value="b">for</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="nueve" value="c">if</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>
+                10. ¿Que lenguaje se utiliza para establecer una estructura de código en un XML?
+              </th>
+            </tr>
+            <tr>
+              <td><input type="radio" name="diez" value="a">PHP</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="diez" value="b">DTD</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="diez" value="c">Java</td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <input id="botonCuestionario" type="submit" value="Enviar">
+      </form>
+    </div>
+    
+  </body>
+</html>
