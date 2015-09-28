@@ -3,17 +3,18 @@
     @author: Jesús Caballero Corpas
 */
 body{
-  background-color: yellowgreen;
+  background-color: #04a7fd;
 }
 #contenedor{
   margin: 0 auto;
   display: block;
 }
 div div{
+  background-color: #78c0e6;
   float: left;
   border-radius: 10px;
   border:black 2px solid;
-  background: content-box;
+  //background: content-box;
   margin: 5px;
   padding: 5px;
   width: 48%;
@@ -25,6 +26,7 @@ p{
 }
 h1,h2{
   text-align: center;
+  //background-color: #78c0e6;
 }
 #botonCuestionario{
   margin: 0 auto;
@@ -35,5 +37,8 @@ table{
 }
 th{
   text-align: left;
+}
+footer{
+  text-align: center;
 }
 
