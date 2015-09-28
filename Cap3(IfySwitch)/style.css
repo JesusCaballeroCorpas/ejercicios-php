@@ -5,6 +5,7 @@
 body{
   background-color: #04a7fd;
   font-family:  "Tahoma", "Geneva", sans-serif; 
+  min-width: 35em;
 }
 #contenedor{
   margin: 0 auto;
@@ -32,6 +33,8 @@ h1,h2{
 #botonCuestionario{
   margin: 0 auto;
   display: block;
+  clear: both;
+  overflow: hidden;
 }
 table{
   width: 95%;
