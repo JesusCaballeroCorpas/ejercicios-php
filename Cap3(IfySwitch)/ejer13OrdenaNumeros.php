@@ -24,10 +24,10 @@ Escribe un programa que ordene tres números enteros introducidos por teclado.
           
           
           $mayor = ($num1 > $num2 && $num1 > $num3) ? $num1 : (($num2 > $num3) ? $num2 : $num3);
+          
           $menor = ($num1 < $num2 && $num1 < $num3) ? $num1 : (($num2 < $num3) ? $num2 : $num3); 
-          $medio = ($num1 != $mayor && $num1 != $menor) ? $num1 : 
-                   (($num2 != $mayor && $num2 != $menor) ? $num2 : $num3);
-                  
+          
+          $medio = ($num1 + $num2 + $num3) - ($mayor + $menor);      
           echo "Los números ordenados de menor a mayor son: " , $menor ," ", $medio ," ", $mayor;
         ?>
         <br><br>
