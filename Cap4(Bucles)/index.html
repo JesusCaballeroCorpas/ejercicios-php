@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+Capitulo 4 Bucles
+
+Ejercicio 7
+Realiza el control de acceso a una caja fuerte. La combinación será un número de 4 cifras. El
+programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje
+“Lo siento, esa no es la combinación” y si acertamos se nos dirá “La caja fuerte se ha abierto
+satisfactoriamente”. Tendremos cuatro oportunidades para abrir la caja fuerte.
+
+Ejercicio 10
+Escribe un programa que calcule la media de un conjunto de números positivos introducidos por
+teclado. A priori, el programa no sabe cuántos números se introducirán. El usuario indicará que ha
+terminado de introducir los datos cuando meta un número negativo.
+
+Ejercicio 13
+Escribe un programa que lea una lista de diez números y determine cuántos son positivos, y cuántos
+son negativos.
+
+Ejercicio 16
+Escribe un programa que diga si un número introducido por teclado es o no primo. Un número
+primo es aquel que sólo es divisible entre él mismo y la unidad.
+
+(Ejercicio 19
+Realiza un programa que pinte una pirámide por pantalla. La altura se debe pedir por teclado
+mediante un formulario. La pirámide estará hecha de bolitas, ladrillos o cualquier otra imagen
+de las 5 que se deben dar a elegir mediante un formulario.)
+
+Ejercicio 20
+Igual que el ejercicio anterior pero esta vez se debe pintar una pirámide hueca.
+
+Ejercicio 23
+Escribe un programa que permita ir introduciendo una serie indeterminada de números hasta que la
+suma de ellos supere el valor 10000. Cuando esto último ocurra, se debe mostrar el total acumulado,
+el contador de los números introducidos y la media.
+
+(Ejercicio 28
+Escribe un programa que calcule el factorial de un número entero leído por teclado.)
+
+@author: Jesús Caballero Corpas
+-->
+<html>
+  <head>
+    <title>Ejercicios PHP Capitulo 4. Bucles</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="contenedor">
+      <h1>Ejercicios PHP Capitulo 4. Bucles</h1>
+      <div align="center">
+        <h2>Ejercicio 7</h2>
+        <h3>Control de Acceso a la Caja Fuerte</h3>
+        <form action="ejer07CajaFuerte.php" method="post">
+          <!--<input type="number" step="1" min="0" max="9999" name="codigo">-->
+          <input type="submit" value="Intentar Abrir">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 10</h2>
+        <h3>Calcular media de un conjunto de números</h3>
+        <form action="ejer10Media.php" method="post">
+          <input type="submit" value="Comenzar">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 13</h2>
+        <h3>Detector de signo</h3>
+        <form action="ejer13PositivoNegativo.php" method="post">
+          <input type="submit" value="Introducir Números">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 16</h2>
+        <h3>Introduce un número para ver si es primo</h3>
+        <form action="ejer16NumeroPrimo.php" method="get">
+          <input type="number" step="1" name="numero">
+          <input type="submit" value="Comprobar si es Primo">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 19</h2>
+        <h3>Dibuja una Piramide</h3>
+        <form action="ejer19Piramide.php" method="get">
+          Introduce la altura <input type="number" step="1" min="2" max="10" name="altura"><br><br>
+          Elige la figura <br><br>
+          <table>
+            <tr>
+              <td><input type="radio" name="figura" value="bolita"> <img src="./images/bolita.png" /></td>
+              <td><input type="radio" name="figura" value="ladrillo"> <img src="./images/ladrillo.png" /></td>
+              <td><input type="radio" name="figura" value="pina"> <img src="./images/pina.png" /></td>
+              <td><input type="radio" name="figura" value="pinguino"> <img src="./images/pinguino.png" /></td>
+              <td><input type="radio" name="figura" value="sol"> <img src="./images/sol.png" /></td>
+            </tr>
+          </table>
+          <br><input type="submit" value="Crear Piramide">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 20</h2>
+        <h3>Dibuja una Piramide Hueca</h3>
+        <form action="ejer20PiramideHueca.php" method="get">
+          Introduce la altura <input type="number" step="1" min="3" name="altura"><br><br>
+          Elige la figura <br><br>
+          <table>
+            <tr><td><input type="radio" name="figura" value="bolita"> <img src="./images/bolita.png" /></td>
+            <td><input type="radio" name="figura" value="ladrillo"> <img src="./images/ladrillo.png" /></td>
+            <td><input type="radio" name="figura" value="pina"> <img src="./images/pina.png" /></td>
+            <td><input type="radio" name="figura" value="pinguino"> <img src="./images/pinguino.png" /></td>
+            <td><input type="radio" name="figura" value="sol"> <img src="./images/sol.png" /></td></tr>
+          </table>
+          <br><input type="submit" value="Crear Piramide">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 23</h2>
+        <h3>Estadistica de un conjunto de números</h3>
+        <form action="ejer23EstadisticaNumeros.php" method="post">
+          <input type="submit" value="Comenzar">
+        </form>
+      </div>
+      
+      <div align="center">
+        <h2>Ejercicio 28</h2>
+        <h3>Introduce un número positivo para calcular su factorial</h3>
+        <form action="ejer28Factorial.php" method="post">
+          <input type="number" step="1" min="0" name="numero">
+          <input type="submit" value="Calcular su Factorial">
+        </form>
+      </div>
+      
+      <p></p>
+    </div>
+  </body>
+  <footer>
+    <h3>Jesús Caballero Corpas ©</h3>
+  </footer>
+</html>
