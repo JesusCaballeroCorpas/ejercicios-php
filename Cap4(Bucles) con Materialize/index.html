@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+Capitulo 4 Bucles
+
+Ejercicio 7
+Realiza el control de acceso a una caja fuerte. La combinación será un número de 4 cifras. El
+programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje
+“Lo siento, esa no es la combinación” y si acertamos se nos dirá “La caja fuerte se ha abierto
+satisfactoriamente”. Tendremos cuatro oportunidades para abrir la caja fuerte.
+
+Ejercicio 10
+Escribe un programa que calcule la media de un conjunto de números positivos introducidos por
+teclado. A priori, el programa no sabe cuántos números se introducirán. El usuario indicará que ha
+terminado de introducir los datos cuando meta un número negativo.
+
+Ejercicio 13
+Escribe un programa que lea una lista de diez números y determine cuántos son positivos, y cuántos
+son negativos.
+
+Ejercicio 16
+Escribe un programa que diga si un número introducido por teclado es o no primo. Un número
+primo es aquel que sólo es divisible entre él mismo y la unidad.
+
+(Ejercicio 19
+Realiza un programa que pinte una pirámide por pantalla. La altura se debe pedir por teclado
+mediante un formulario. La pirámide estará hecha de bolitas, ladrillos o cualquier otra imagen
+de las 5 que se deben dar a elegir mediante un formulario.)
+
+Ejercicio 20
+Igual que el ejercicio anterior pero esta vez se debe pintar una pirámide hueca.
+
+Ejercicio 23
+Escribe un programa que permita ir introduciendo una serie indeterminada de números hasta que la
+suma de ellos supere el valor 10000. Cuando esto último ocurra, se debe mostrar el total acumulado,
+el contador de los números introducidos y la media.
+
+(Ejercicio 28
+Escribe un programa que calcule el factorial de un número entero leído por teclado.)
+
+@author: Jesús Caballero Corpas
+-->
+<html>
+  <head>
+    <title>Ejercicios PHP Capitulo 4. Bucles</title>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body class="light-blue lighten-5">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <div class="light-blue lighten-5 container" >
+      <h1 class="center-align">Ejercicios PHP Capitulo 4. Bucles</h1>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <h4 class="collapsible-header">Ejercicio 7 - Control de Acceso a la Caja Fuerte</h4>
+          <div class="collapsible-body">
+            <p>Control de Acceso a la Caja Fuerte</p>
+            <form action="ejer07CajaFuerte.php" method="post">
+              <!--<input type="number" step="1" min="0" max="9999" name="codigo">-->
+              <button class="btn waves-effect waves-light" type="submit" name="action">Intentar Abrir
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li>
+      
+        <li>  
+          <h4 class="collapsible-header">Ejercicio 10 - Calcular media de un conjunto de números</h4>
+          <div class="collapsible-body">
+            <p>Calcular media de un conjunto de números</p>
+            <form action="ejer10Media.php" method="post">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Comenzar
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li>
+        
+        <li>
+          <h4 class="collapsible-header">Ejercicio 13 - Detector de signo</h4>
+          <div class="collapsible-body">
+            <p>Detector de signo</p>
+            <form action="ejer13PositivoNegativo.php" method="post">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Introducir Números
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li>
+        
+        <li>
+          <h4  class="collapsible-header">Ejercicio 16 - Introduce un número para ver si es primo</h4>
+          <div class="collapsible-body">
+            <p>Introduce un número para ver si es primo</p>
+            <form action="ejer16NumeroPrimo.php" method="get">
+              <input type="number" step="1" name="numero">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Comprobar si es Primo
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li> 
+        
+        <li>
+          <h4  class="collapsible-header">Ejercicio 19 - Dibuja una Piramide</h4>
+          <div class="collapsible-body">
+            
+            <form action="ejer19Piramide.php" method="get">
+              Introduce la altura <input type="number" step="1" min="2" max="10" name="altura"><br><br>
+              Elige la figura <br><br>
+              <table class="responsive-table">
+                <tr>
+                  <td><input class="with-gap" type="radio" name="figura" value="bolita" id="radio1"/> 
+                      <label for="radio1"><img src="./images/bolita.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="ladrillo" id="radio2"/> 
+                      <label for="radio2"><img src="./images/ladrillo.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="pina" id="radio3"/> 
+                      <label for="radio3"><img src="./images/pina.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="pinguino" id="radio4"/> 
+                      <label for="radio4"><img src="./images/pinguino.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="sol" id="radio5"/> 
+                      <label for="radio5"><img src="./images/sol.png" /></label></td>
+                </tr>
+              </table>
+              <br><button class="btn waves-effect waves-light" type="submit" name="action">Crear Piramide
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li>
+        
+        <li>
+          <h4  class="collapsible-header">Ejercicio 20 - Dibuja una Piramide Hueca</h4>  
+          <div class="collapsible-body">
+            
+            <form action="ejer20PiramideHueca.php" method="get">
+              Introduce la altura <input type="number" step="1" min="3" name="altura"><br><br>
+              Elige la figura <br><br>
+              <table class="responsive-table">
+                <tr>
+                  <td><input class="with-gap" type="radio" name="figura" value="bolita" id="radio10"/> 
+                      <label for="radio10"><img src="./images/bolita.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="ladrillo" id="radio20"/> 
+                      <label for="radio20"><img src="./images/ladrillo.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="pina" id="radio30"/> 
+                      <label for="radio30"><img src="./images/pina.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="pinguino" id="radio40"/> 
+                      <label for="radio40"><img src="./images/pinguino.png" /></label></td>
+                  <td><input class="with-gap" type="radio" name="figura" value="sol" id="radio50"/> 
+                      <label for="radio50"><img src="./images/sol.png" /></label></td>
+                </tr>
+              </table>
+              <br><button class="btn waves-effect waves-light" type="submit" name="action">Crear Piramide
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li>
+        
+        <li>
+          <h4  class="collapsible-header">Ejercicio 23 - Estadistica de un conjunto de números</h4>
+          <div class="collapsible-body">
+            <p>Estadistica de un conjunto de números</p>
+            <form action="ejer23EstadisticaNumeros.php" method="post">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Comenzar
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </li>
+        
+        <li>
+          <h4  class="collapsible-header">Ejercicio 28 - Introduce un número positivo para calcular su factorial</h4>  
+          <div class="collapsible-body">
+            <p>Introduce un número positivo para calcular su factorial</p>
+            <form action="ejer28Factorial.php" method="post">
+              <input type="number" step="1" min="0" name="numero">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Calcular su Factorial
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+      
+        </li>
+      </ul>
+    </div>
+  </body>
+  <footer>
+    <p class="center-align">Jesús Caballero Corpas ©</p>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+</html>

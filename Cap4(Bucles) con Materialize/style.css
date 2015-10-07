@@ -1,0 +1,50 @@
+/* 
+    Created on : 23-sep-2015, 10:13:14
+    @author: Jesús Caballero Corpas
+*/
+body{
+  background-color: #04a7fd;
+  font-family:  "Tahoma", "Geneva", sans-serif; 
+  min-width: 35em;
+  color: black;
+}
+#contenedor{
+  margin: 0 auto;
+  //display: block;
+}
+div div{
+  background-color: #78c0e6;
+  float: left;
+  border-radius: 10px;
+  border:black 2px solid;
+  //background: content-box;
+  margin: 5px;
+  padding: 5px;
+  width: 48%;
+  min-height: 10rem;
+  min-width: 20rem;
+}
+p{
+  clear: both;
+  overflow: hidden;
+}
+h1,h2{
+  text-align: center;
+  //background-color: #78c0e6;
+}
+#botonCuestionario{
+  margin: 0 auto;
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+table{
+  width: 95%;
+}
+th{
+  text-align: left;
+}
+footer{
+  text-align: center;
+}
+
