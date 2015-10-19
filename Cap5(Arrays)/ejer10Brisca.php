@@ -48,7 +48,6 @@ cogido de una baraja de verdad.
               $palo = array ('Oros', 'Copas', 'Bastos', 'Espadas');
               $figura = array ('As', '2', '3', '4', '5', '6', '7', 'Sota', 'Caballo', 'Rey');
               $contadorCartas = 0;
-              $cartasGanadas = new SplFixedArray(10);
               $totalPuntos = 0;
               
               while($contadorCartas < 10){
@@ -56,6 +55,7 @@ cogido de una baraja de verdad.
                 $cartaPalo = $palo[rand(0, 3)];
                 $carta = $cartaFigura." de ".$cartaPalo;
                 if (!in_array($carta, $cartasGanadas)) {
+                  $cartasGanadas[] = $carta;
                   $cartaPuntos = $puntuacion[$cartaFigura];
                   echo "<div class='col s4'>" . $carta . " Puntos: " . $cartaPuntos . "</div>";
                   $contadorCartas++;
