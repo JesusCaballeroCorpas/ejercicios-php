@@ -1,0 +1,105 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+header{
+    color: white;
+    text-align: center;
+}
+section{
+    position: relative;
+    width: 60%;
+    margin: 2em auto;
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-image: url("../images/mantelpoker.jpg");
+    color: white;
+}
+.As, .K, .Q, .J, .c7,.c8{
+    display: inline-block;
+    background-image: url("../images/pokerdado.jpg");
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 140px;
+}
+.As{
+    background-position: 0px 0px;
+}
+.K{
+    background-position: -176px 0px;
+}
+.Q{
+    background-position: -351px 0px;
+}
+.J{
+    background-position: -527px 0px;
+}
+.c7{
+    background-position: -878px 0px;
+}
+.c8{
+    background-position: -702px 0px;
+}
+/************ Inicio del botón 1 ************/
+#boton1{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin:0 auto;
+    top: 30px;
+    background-color: red;
+    border:10px solid white;
+    transition: all 0.3s linear;
+}
+#entra, #gratis{
+    position: absolute;
+    text-align: center;
+    font-size: 40px;
+    color:white;
+    width: 100px;
+    top: 50px;
+    left: 50px;
+    text-shadow: 0px 3px 1px grey;
+    transition: all 0.3s linear;
+}
+#gratis{
+    top: 75px;
+    left: 50px;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+#estrella{
+    position: absolute;
+    background-image: url(../images/star.png);
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    left: 20px;
+    top:20px;
+    opacity: 0.2;
+    z-index: 0;
+}
+#boton1:hover{
+    background-color: orange;
+    box-shadow: 1px 5px 1px grey;
+}
+#boton1:hover #estrella{
+    animation:estrella 1s linear;
+}
+#boton1:hover #entra{
+    transform:scale(0.0);
+    opacity: 0;
+}
+#boton1:hover #gratis{
+    opacity: 1;
+}
+@keyframes estrella{
+    50%{transform:scale(0.5) rotate(180deg)}
+    100%{transform:scale(1) rotate(360deg)}
+}
+/************** Fin del botón 1 *************/
