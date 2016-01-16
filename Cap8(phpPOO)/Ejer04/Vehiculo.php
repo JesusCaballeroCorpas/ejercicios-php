@@ -23,7 +23,7 @@ class Vehiculo {
       $this->kmRecorridos = $kmRecorridos;
     }
 
-        public function anda($km) {
+    public function anda($km) {
       $this->kmRecorridos += $km;
       self::$kmTotales += $km;
       return " ha andado $km kilometros.";

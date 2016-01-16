@@ -16,18 +16,20 @@ se puedan vender más entradas de la cuenta.
 class Zona{
   //Atributos de clase
   private static $numZonas = 0;
+  private static $dineroGanado = 0;
   
   //Atributos de instancia
   private $nombre;
   private $aforo;
   private $entradasLibres;
-  
+  private $precio;
   
   //Constructor
-  public function __construct($nombre, $aforo) {
+  public function __construct($nombre, $aforo , $precio) {
     $this->nombre = $nombre;
     $this->aforo = $aforo;
     $this->entradasLibres = $aforo;
+    $this->precio = $precio;
     self::$numZonas++;
   }
   
@@ -35,9 +37,17 @@ class Zona{
   static function getNumZonas() {
     return self::$numZonas;
   }
+  
+  static function getDineroGanado() {
+    return self::$dineroGanado;
+  }
 
   static function setNumZonas($numZonas) {
     self::$numZonas = $numZonas;
+  }
+  
+  static function setDineroGanado($dineroGanado) {
+    self::$dineroGanado = $dineroGanado;
   }
   
   //Getter y Setter de instancia
@@ -52,6 +62,10 @@ class Zona{
   function getEntradasLibres() {
     return $this->entradasLibres;
   }
+  
+  function getPrecio() {
+    return $this->precio;
+  }
 
   function setNombre($nombre) {
     $this->nombre = $nombre;
@@ -64,11 +78,32 @@ class Zona{
   function setEntradasLibres($entradasLibres) {
     $this->entradasLibres = $entradasLibres;
   }
+  
+  function setPrecio($precio) {
+    $this->precio = $precio;
+  }
 
   //Metodos de instancia
+  /**
+   * Metodo para vender entradas
+   * @param type $numEntradas
+   */
   public function venderEntradas($numEntradas) {
-    if($this->entradasLibres >= $numEntradas && $this->entradasLibres > 0 && $numEntradas > 0){
+   // if($this->entradasLibres >= $numEntradas && $this->entradasLibres > 0 && $numEntradas > 0){
       $this->entradasLibres -= $numEntradas;
+     /* return true;
+    } else {
+      return false;
+    }*/
+  }
+  
+  /**
+   * Metodo para comprobar la disponibilidad de las entradas.
+   * @param type $numEntradas
+   * @return boolean
+   */
+  public function comprobarDisponibilidad($numEntradas){
+    if(($this->entradasLibres - $numEntradas) >= 0 && $numEntradas > 0){
       return true;
     } else {
       return false;
@@ -79,7 +114,8 @@ class Zona{
   public function __toString() {
     return "<h3> " . $this->getNombre() . "</h3>" . 
            "Aforo: " . $this->getAforo() .
-           "<br>Entradas Libres: " . $this->getEntradasLibres();
+           "<br>Entradas Libres: " . $this->getEntradasLibres() .
+           "<br>Precio: " . $this->getPrecio() . "€";
   }
 }
 

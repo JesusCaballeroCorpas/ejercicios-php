@@ -11,7 +11,6 @@
                                     new Zona("Compra-Venta", 200, 25),
                                     new Zona("VIP", 25, 100)]);
     $_SESSION['numZonas'] = Zona::getNumZonas();
-    $_SESSION['dinGanado'] = Zona::getDineroGanado();
   }
   $zonas = unserialize($_SESSION['zonas']);
   
@@ -45,17 +44,18 @@ se puedan vender más entradas de la cuenta.
         <meta author="Jesús Caballero Corpas">
         <title>Expocampanillas</title>
         <link rel="stylesheet" href="css/jquery-ui.min.css" />
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
         <script src="js/jquery.js"></script>
         <script src="js/jquery-ui.min.js"></script>
+        <!--<link rel="stylesheet" href="css/style.css" />-->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
         <script src="js/bootstrap.min.js"></script>
         <script>
             $(function() {
               $( "#dialog-confirm" ).dialog({
                 resizable: false,
                 buttons: {
-                  "Cerrar": function() {
+                  "Aceptar": function() {
                     $( this ).dialog( "close" );
                   }
                 }
@@ -92,58 +92,22 @@ se puedan vender más entradas de la cuenta.
             //Se reciben la zona y el número de entradas vendidas
             $numZona = $_POST['zona'];
             $numEntradas = $_POST["numeroEntradas$numZona"];
-            $dinero = $_POST['dinero'];
             if(isset($numZona)){
-              //Si quedan entradas suficientes entra
-              if($zonas[$numZona]->comprobarDisponibilidad($numEntradas)){
-                //Si no he recibido dinero realizo el pago
-                if(!isset($dinero)){
-            ?>    
-                  <div id='dialog-confirm' title='Detalle Compra'>
-                    <?= $numEntradas ?> entradas para la zona <?= $zonas[$numZona]->getNombre() ?> seleccionadas correctamente.
-                    <br>TOTAL A PAGAR: <?= $numEntradas * $zonas[$numZona]->getPrecio() ?>€<br>
-                    <form action="index.php" method="post">
-                        Dinero Recibido: <input type="number" name="dinero">
-                        <input type="hidden" name="zona" value="<?= $numZona ?>">
-                        <input type="hidden" name="numeroEntradas<?= $numZona ?>" value="<?= $numEntradas ?>">
-                        <button>Realizar Compra</button>
-                    </form>
-                  </div>
-            <?php
-                //Si he recibido menos dinero del valor de las entradas doy un error de pago
-                } else if($dinero < ($numEntradas * $zonas[$numZona]->getPrecio())){
-            ?>    
-                <div id='dialog-confirm' title='Error de pago'>
-                  No se ha podido realizar la compra de entradas para la zona <?= $zonas[$numZona]->getNombre() ?><br> 
-                  Faltan <?= ($numEntradas * $zonas[$numZona]->getPrecio()) - $dinero ?>€
-                </div>
-            <?php
-                //Se realiza la venta
-                } else {
-                  $zonas[$numZona]->venderEntradas($numEntradas);
-            ?>
-                  <div id='dialog-confirm' title='Compra Completada'>
-                    <?= $numEntradas ?> entradas para la zona <?= $zonas[$numZona]->getNombre() ?> vendidas correctamente<br>
-                    TOTAL A DEVOLVER: <?= $dinero - ($numEntradas * $zonas[$numZona]->getPrecio()) ?>€
-                  </div>
-            <?php
-                  //Se suma al dinero ganado la venta realizada
-                  $_SESSION['dinGanado'] += ($numEntradas * $zonas[$numZona]->getPrecio());
-                }
-              } else {//Si no quedan entradas suficientes devuelve false y no deja vender.
-            ?>  
-                <div id='dialog-confirm' title='Fallo en la Compra'>
-                  No se ha podido realizar la compra de entradas para la zona <?= $zonas[$numZona]->getNombre() ?><br> 
-                  Quedan <?= $zonas[$numZona]->getEntradasLibres() ?> entradas libres.
-                </div>
-            <?php
+              //Si quedan entradas suficientes devuelve true y se realiza la venta
+              if($zonas[$numZona]->venderEntradas($numEntradas)){
+                echo "<div id='dialog-confirm' title='Compra Completada'>";
+                echo $numEntradas . " entradas para la zona " . $zonas[$numZona]->getNombre() . " compradas correctamente."
+                        . "<br>TOTAL A PAGAR: " . $numEntradas * $zonas[$numZona]->getPrecio() ."€</div>";
+              } else { //Si no quedan entradas suficientes devuelve false y no deja vender.
+                echo "<div id='dialog-confirm' title='Fallo en la Compra'>";
+                echo "No se ha podido realizar la compra de entradas para la zona " . $zonas[$numZona]->getNombre() . 
+                     "<br> Quedan " . $zonas[$numZona]->getEntradasLibres() . " entradas libres.</div>";
               }
             }
             ?>
             <!-- Botón de venta de entradas -->
             <button id="createZone" class="btn bg-primary col-md-12">Crear Nueva Zona</button>
             
-            <!-- SE MUESTRAN TODAS LAS ZONAS -->
             <form action="index.php" method="post">
               <?php
               //Se muestran todas las zonas
@@ -159,20 +123,16 @@ se puedan vender más entradas de la cuenta.
               }
               ?>
             </form>
-            <!-- Se muestra el total de zonas -->
-            <div class='panel-footer col-md-12'>
-              <h2 class="col-md-6">Número total de zonas: <?= $_SESSION['numZonas'] ?></h2>
-              <h2 class="col-md-6">Dinero Ganado: <?= $_SESSION['dinGanado'] ?>€</h2>
-            </div>
+            
           <?php
           
+          //Se muestra el total de zonas
+          echo "<div class='panel-footer col-md-12'><h2>Número total de zonas: " . $_SESSION['numZonas'] . "</h2></div>";
           
-          
-          //Se guardan las zonas en la sesion
+          //Se guardan las onas en la sesion
           $_SESSION['zonas'] = serialize($zonas);
           ?>
         </section>
-        
         <!-- Formulario para dar de alta una nueva zona -->
         <div id="dialog-form" title="Dar de Alta Nueva Zona">
           <form action="index.php" method="post">
